@@ -1,0 +1,44 @@
+span {
+	position: absolute;
+	top: 0;
+	left: 113px;
+}
+
+form {
+	position: relative;
+}
+
+div {
+	width: 50%;
+	float: left;
+}
+
+ul {
+	list-style-type: none;
+	margin-top:100px;
+}
+
+li {
+	font-size: 20px;
+	margin-top: 20px;
+	width: 40%;
+	transition: 0.3s;
+}
+
+input{
+	display: block;
+	margin: 20px auto 20px;
+}
+
+label{
+	display: block;
+	margin: -40px 0 0 105px;
+}
+
+.active {
+	color: red;
+	text-transform: uppercase;
+	border: 1px solid red;
+	text-align: center;
+	transition: 0.3s;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>start</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div>
+		<form action="">
+		<span>Введите имя нового элемента</span>
+			<input type="text" name="input">
+			<input type="button" onclick="firstElement(this.form)" value="выбрать первый елемент">
+			<input type="button" onclick="lastElement(this.form)" value="Выбрать последний элемент">
+			<input type="button" onclick="mextElement(this.form)" value="Выбрать следующий элемент">
+			<input type="button" onclick="prevElement(this.form)" value="Выбрать предыдущий элемент">
+			<input type="button" onclick="addNevElement(this.form)" value="Добавить элемент">
+			<input type="button" onclick="removeElement(this.form)" value="Удалить элемент">
+			<input type="button" onclick="appBefore(this.form)" value="Добавить в начало">
+		</form>
+	</div>
+
+
+
+	<div>
+		<ul id="list">
+			<li class="active">first elemet</li>
+			<li>second element</li>
+			<li>third element</li>
+		</ul>
+	</div>
+
+
+
+
+
+
+<script src="js/script.js"></script>
+</body>
+</html>
