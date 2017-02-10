@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script>
+        window.onload = function () {
+            var mainDiv = document.getElementById("main-div");
+                nevItem = document.createElement('span');
+
+            mainDiv.onmouseover = function (e) {
+                var target = e && e.target || window.event.srcElement;
+                var dataToggleId = target.getAttribute('data-tooltip');
+                if (!dataToggleId) {
+                    return;
+                };
+                document.body.insertBefore(nevItem, mainDiv);
+                nevItem.innerHTML = "<b>"+dataToggleId+"</b>";
+            };
+        };
+    </script>
+</head>
+<body>
+<div id="main-div">
+    <span data-tooltip="наведите">наведите</span>
+    <span data-tooltip="для">для</span>
+    <span data-tooltip="подсказки">подсказки</span>
+    <span>JavaScript</span>
+</div>
+</body>
+</html>

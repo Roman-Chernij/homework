@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>slide</title>
+</head>
+<body>
+<style>
+    .conteiner {
+        width: 500px;
+        height: 500px;
+        margin: 20px auto;
+    }
+    .slide {
+        width: 400px;
+        height: 400px;
+        margin: 30px auto 10px;
+        border: 8px solid #0000CD;
+        overflow: hidden;
+        position: relative;
+    }
+    .slide__link {
+        padding:0;
+        margin:0;
+        position:absolute;
+        top:0;
+        left:0;
+    }
+</style>
+
+    <div class="conteiner">
+        <div class="slide">
+            <ul class="slide__link">
+                <li>1-й слайд</li>
+                <li>2-й слайд</li>
+                <li>3-й слайд</li>
+                <li>4-й слайд</li>
+            </ul>
+        </div>
+        <div class="buttonGrup">
+            <button class="prev" data-prev>Назад</button>
+            <button class="next" data-next>Вперед</button>
+        </div>
+    </div>
+
+
+
+<script>
+
+
+(function () {
+
+    var div = document.querySelector(".slide");
+        link = document.querySelector(".slide > .slide__link");
+        item = link.children.length;
+        itemChild = link.children;
+        widthDiv = parseInt(getComputedStyle(div).width);
+        heightDiv = parseInt(getComputedStyle(div).height);
+        maxUl = widthDiv * item;
+        widthMaxUl = widthDiv * (item-1);
+        nextBtn = document.querySelector(".next");
+        prevBtn = document.querySelector(".prev");
+
+
+
+    styleElem();
+
+    prevBtn.addEventListener("click", prevSlide);
+    nextBtn.addEventListener("click", nextSlide);
+
+    function nextSlide() {
+        leftMaxUl = -widthMaxUl;
+        left = parseInt(getComputedStyle(link).left);
+        if(left == leftMaxUl) {
+            return;
+        }
+        linkLeft = left - widthDiv;
+        link.style.cssText += "left:"+linkLeft+"px;";
+    };
+
+    function prevSlide() {
+        left = parseInt(getComputedStyle(link).left);
+        if(left == 0) {
+            return;
+        }
+        linkLeft = left + widthDiv;
+        link.style.cssText += "left:"+linkLeft+"px;";
+    };
+
+
+    function styleElem (){
+        for (var i = 0; i <= item-1; i++){
+           itemChild[i].style.cssText = "width:"+widthDiv+"px;height:"+heightDiv+"px;font-size:40px;display: inline-block;                                            margin:0 -4.5px 0 0;list-style-type: none;background-color:#D3D3D3;padding:110px 0                                           0;text-align: center;"
+        }
+        link.style.cssText = "width:"+maxUl+"px;height:"+heightDiv+"px;"
+    }
+})();
+
+</script>
+
+</body>
+</html>
